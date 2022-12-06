@@ -10,6 +10,7 @@ public class Dictionary{
     private String input[]; 
 
     public Dictionary(){
+         // Change the directory of the input document!
         input = load("C://words.txt");  
     }
     //64 characters.... highest possible == 20-25%   25 best........
@@ -25,22 +26,22 @@ public class Dictionary{
     
     private String[] load(String file) {
         File aFile = new File(file);
-        // FileÀà³ÌĞòÖĞ²Ù×÷ÎÄ¼şºÍÄ¿Â¼
+        // Fileç±»ç¨‹åºä¸­æ“ä½œæ–‡ä»¶å’Œç›®å½•
         StringBuffer contents = new StringBuffer();
-        //×Ö·û´®±äÁ¿£¬ËüµÄ¶ÔÏóÊÇ¿ÉÒÔÀ©³äºÍĞŞ¸ÄµÄ
+        //å­—ç¬¦ä¸²å˜é‡ï¼Œå®ƒçš„å¯¹è±¡æ˜¯å¯ä»¥æ‰©å……å’Œä¿®æ”¹çš„
         BufferedReader input = null;
-        // ÆäËû×Ö·ûÊäÈëÁ÷Ìí¼ÓÒ»Ğ©»º³å¹¦ÄÜ
+        // å…¶ä»–å­—ç¬¦è¾“å…¥æµæ·»åŠ ä¸€äº›ç¼“å†²åŠŸèƒ½
         try {
             input = new BufferedReader( new FileReader(aFile) );
-            // ÄÜ´Ó´ÅÅÌÉÏ¶ÁÈëÎÄ¼ş
+            // èƒ½ä»ç£ç›˜ä¸Šè¯»å…¥æ–‡ä»¶
             String line = null; 
             int i = 0;
             while (( line = input.readLine()) != null){
-            	// ±íÊ¾Ã¿´Î¶ÁÈ¡Ò»ĞĞÊı¾İ
+            	// è¡¨ç¤ºæ¯æ¬¡è¯»å–ä¸€è¡Œæ•°æ®
                 contents.append(line);
                 i++;
                 contents.append(System.getProperty("line.separator"));
-                //·µ»ØµÄÊÇĞĞ·Ö¸ô·û
+                //è¿”å›çš„æ˜¯è¡Œåˆ†éš”ç¬¦
             }
         }catch (FileNotFoundException ex){
             System.out.println("Can't find the file - are you sure the file is in this location: "+file);
